@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+    <Properties>
+        <Property name="logfile">${env:TMP}\temperature.log</Property>
+        <Property name="pattern">%-5level %date{yyyy-MMM-dd HH:mm} [%thread] %logger{2}.%method - %msg%n</Property>
+    </Properties>
+
+    <Appenders>
+        <Select>
+            <SystemPropertyArbiter propertyName="JAR" propertyValue="jar">
+                <File name="out" append="true" immediateFlush="true" fileName="${logfile}">
+                    <PatternLayout pattern="${pattern}" />
+                </File>
+            </SystemPropertyArbiter>
+
+            <DefaultArbiter>
+                <Console name="out" target="SYSTEM_OUT">
+                    <PatternLayout pattern="${pattern}" />
+                </Console>
+            </DefaultArbiter>
+        </Select>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="mqtt" level="warn" additivity="false">
+            <AppenderRef ref="out" />
+        </Logger>
+
+        <Root level="trace">
+            <AppenderRef ref="out" />
+        </Root>
+    </Loggers>
+</Configuration>

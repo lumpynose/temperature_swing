@@ -1,0 +1,6 @@
+mqtt.topics=rtl_433/temperature/#, zigbee2mqtt/temperature/#
+mqtt.brokerAddress=tcp://192.168.50.5
+
+mqtt.sensors=aqara=aqara,Prologue-TH=outside prologue,Acurite-Tower=garage accurite,Oregon-THGR122N=attic oregon,sonoff=sonoff,aqara_tvoc=aqara tvoc,hue_outdoor=outside hue
+
+mqtt.tunit=F

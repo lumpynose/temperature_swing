@@ -1,0 +1,5 @@
+Open the run window, type shell:startup to open the startup folder.
+
+Right click and select New -> Shortcut.
+
+Navigate to this folder and select temperature.cmd.
